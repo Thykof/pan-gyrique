@@ -1,1 +1,1 @@
-web: gunicorn panegyrique.wsgi --log-file -
+web: gunicorn panegyrique:app
