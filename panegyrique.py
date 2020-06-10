@@ -70,11 +70,10 @@ def slack_action():
         }"""
 
 
-        response = slack_client.views_open(
+        slack_client.views_open(
             trigger_id=trigger_id,
             view=view
         )
-        print(response)
 
     elif payload['type'] == 'block_actions':
         receiver_user_id = payload['actions'][0]['selected_user']
@@ -85,11 +84,11 @@ def slack_action():
         action_id = payload['view']['blocks'][1]['element']['action_id']
         message = "Quelqu'un t'a envoyé un message :tada:\n"
         message += payload['view']['state']['values'][block_id][action_id]['value']
-        response = slack_client.chat_postMessage(
+        slack_client.chat_postMessage(
             channel=receiver_user_id,
             text=message
         )
-        print(response)
+
     return make_response("", 200)
 
 
