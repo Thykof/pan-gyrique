@@ -2,6 +2,10 @@
 
 This is a slack bot that allow users to send anonymous compliment and congratulation.
 
+## Tech
+
+This is a web server coded in python with the Flask framework.
+
 ## Develop
 
 Run:
@@ -15,4 +19,8 @@ Start ngrock: `./ngrok http 3000`.
 
 ## Production
 
-The project is not in production yet.
+The app is deployed in heroku at https://panegyrique.herokuapp.com.
+
+The two variables `SLACK_SIGNING_SECRET` and `SLACK_BOT_TOKEN` are defined in the heroku dashboard as Config Vars.
+
+It uses `gunicorn`.
